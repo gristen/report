@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    background-color: #1e1e26;
+}
+p{
+    color: white;
+}
+.dialog{
+    background-color: #14141A;
+    width: 800px;
+    height: 90vh;
+}html
+ {
+     scrollbar-width:thin;
+     scrollbar-color: #333 #222;
+ }
