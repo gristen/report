@@ -1,36 +1,48 @@
-<script setup>
-  import { inject } from 'vue'
 
-  const items = inject('items')
+<script setup>
+import { inject, ref } from 'vue'
+import axios from 'axios'
+import ChatComponent from '@/components/ChatComponent.vue'
+const messages = ref([]) // Создаем реактивное свойство для хранения сообщений
+const items = inject('items')
+const loadDialog = async (userId) => {
+  try {
+    const { data } = await axios.get(`https://77c5a6fe3757e543.mokky.dev/messages?userId=${userId}`)
+    messages.value = data[0]
+  console.log("messages")
+  } catch (error) {
+    console.error(error)
+  }
+}
 </script>
 <template>
-
   <div class="messages" style="max-height: 100%; overflow-y: auto;">
-    <div class="content mr-3 mt-3 rounded-xl p-3  ml-1"
-
-
-    >
+    <div v-for="(report, index) in items" :key="index" class="content mr-3 mt-3 rounded-xl p-3 ml-1" @click="loadDialog(report.id)">
       <div class="flex justify-between">
-        <p> <span class="status_message bg-emerald-400 p-1 rounded mr-2">NEW</span>nickname</p>
-        <p class="text-gray-500">27/07 1.16</p>
+        <p> <span class="status_message bg-emerald-400 p-1 rounded mr-2">NEW</span>{{ report.user }}</p>
+        <p class="text-gray-500">{{ report.timestamp }}</p>
       </div>
-      <p class="mt-2">Всем привет, у меня тут проблема проооосто капец, очень всё жёстко нужна помощью ...</p>
-      <p class=" time text-gray-500 p-1 mt-1 ">только что...</p>
+      <p class="mt-2">{{ report.description }}</p>
+      <p class="time text-gray-500 p-1 mt-1">только что...</p>
     </div>
-
   </div>
+  <ChatComponent :messages="messages.messages"  />
 
 </template>
+
+
 <style scoped>
-  .content{
-    background-color: #222128;
-    width: 500px;
-  }
-  .time{
-    background: linear-gradient(to right, #333239, rgba(0, 0, 0, 0) 70%);
-  }
-  .messages{
-    scrollbar-width: thin;
-    scrollbar-color: #d0c7c7 #222;
-  }
+.content {
+  background-color: #222128;
+  width: 500px;
+}
+
+.time {
+  background: linear-gradient(to right, #333239, rgba(0, 0, 0, 0) 70%);
+}
+
+.messages {
+  scrollbar-width: thin;
+  scrollbar-color: #d0c7c7 #222;
+}
 </style>
