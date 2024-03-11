@@ -1,12 +1,15 @@
 <template>
   <div class="dialog p-5 rounded-xl">
-    <div class="messages" style=" overflow-y: auto; height: 500px;">
-      <div v-for="(msg, index) in messages" :key="index" class="message-container">
-        <div class="flex mt-5" :class="{ 'admin-message': msg.sender === 'admin', 'user-message': msg.sender !== 'admin' }">
-          <p v-if="msg.sender === 'admin'" class="text-gray-500 mr-2">{{ }}</p>
-          <p :class="msg.sender === 'admin' ? 'admin-nickname' : 'user-nickname'">{{ msg.sender }} <span class="status_message bg-gray-600 p-1 rounded mr-2">{{ msg.sender }}</span></p>
+    <div class="messages" style="display: flex; flex-direction: column; overflow-y: auto; height: 500px;">
+      <div v-for="(msg, index) in messages" :key="index" :class="[msg.sender === 'admin' ? 'me' : 'he']">
+        <div class="flex  mt-5">
+          <!-- Проверяем роль отправителя и выводим спан и имя в соответствии с ролью -->
+          <span v-if="msg.sender === 'admin'" class="p-1 rounded mr-2 status_message_admin">{{ msg.sender }}</span>
+          <p v-if="msg.sender === 'admin'" class="mr-2">{{ msg.sender }}</p>
+          <p v-if="msg.sender !== 'admin'" class="mr-2">{{ msg.sender }}</p>
+          <span v-if="msg.sender !== 'admin'" class="p-1 rounded mr-2 status_message_user">{{ msg.sender }}</span>
         </div>
-        <div class="p-1" :class="{ 'admin-message': msg.sender === 'admin', 'user-message': msg.sender !== 'admin' }">
+        <div class="p-1">
           <p class="text p-2 rounded-xl">{{ msg.message }}</p>
         </div>
       </div>
@@ -22,52 +25,21 @@
 <script setup>
 import { defineProps } from 'vue';
 
+// Получение пропса с сообщениями
 const { messages } = defineProps({
   messages: Array // Определение пропса
 });
 
-// Функция для форматирования времени
-const formatDate = (timestamp) => {
-  const date = new Date(timestamp);
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  return `${date.getDate()}/${date.getMonth() + 1} ${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`;
-};
+
 </script>
 
 <style scoped>
-.dialog {
+.content {
   background-color: #222128;
 }
 
-.message-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Сообщения отображаются слева */
-}
-
-.admin-message {
-  align-self: flex-start; /* Расположение сообщений администратора слева */
-}
-
-.user-message {
-  align-self: flex-end; /* Расположение сообщений пользователя справа */
-}
-
-
-.messages {
-  scrollbar-width: thin;
-  scrollbar-color: #d0c7c7 #222;
-}
-.user-nickname{
-  margin-left: auto;
-}
-.text {
-  background-color: #222128;
-}
-
-.status_message {
-  color: white;
+.he div{
+  justify-content: end;
 }
 
 .active {
@@ -79,23 +51,42 @@ const formatDate = (timestamp) => {
   background-color: #403f41;
 }
 
+.buttons {
+  padding: 0 20px 20px 20px;
+}
+
 input {
   width: 100%;
   background-color: #0F0E13;
+}
+
+.text {
+  background-color: #222128;
+}
+
+.me, .he {
+  width: 50%;
+}
+
+.messages {
+  scrollbar-width: thin;
+  scrollbar-color: #d0c7c7 #222;
+}
+
+.he {
+  margin-left: auto;
 }
 
 .time {
   background: linear-gradient(to right, #333239, rgba(0, 0, 0, 0) 70%);
 }
 
-.user-message {
-
-  width: 50%;
-}
-.admin-message{
-  width: 50%;
+.status_message_admin {
+  background-color: red; /* Фон статуса для сообщений от админа */
 }
 
+.status_message_user {
+  background-color: gray; /* Фон статуса для сообщений от пользователя */
 
-
+}
 </style>
