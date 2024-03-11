@@ -3,7 +3,7 @@
 import { inject, ref } from 'vue'
 import axios from 'axios'
 import ChatComponent from '@/components/ChatComponent.vue'
-const messages = ref([]) // Создаем реактивное свойство для хранения сообщений
+const messages = ref([])
 const items = inject('items')
 const loadDialog = async (userId) => {
   try {
@@ -26,7 +26,7 @@ const loadDialog = async (userId) => {
       <p class="time text-gray-500 p-1 mt-1">только что...</p>
     </div>
   </div>
-  <ChatComponent :messages="messages.messages"  />
+  <ChatComponent :messages="messages.messages" :report="items"  />
 
 </template>
 
