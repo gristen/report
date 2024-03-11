@@ -12,8 +12,8 @@ const selectedReportId = ref(null);
 const loadDialog = async (userId, dataReport) => {
   try {
     const { data } = await axios.get(`https://77c5a6fe3757e543.mokky.dev/messages?userId=${userId}`);
-    messages.value = data[0];
-    console.log(messages.value.dialog)
+    messages.value = data[0]['dialog'];
+    console.log(messages.value)
     report.value = dataReport;
     selectedReportId.value = dataReport.id;
   } catch (error) {
@@ -36,7 +36,7 @@ const loadDialog = async (userId, dataReport) => {
       <p class="time text-gray-500 p-1 mt-1">только что...</p>
     </div>
   </div>
-  <ChatComponent :messages="messages.messages" :report="report"  />
+  <ChatComponent :messages="messages" :report="report"  />
 </template>
 
 <style scoped>

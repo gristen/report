@@ -7,13 +7,9 @@
             <div class="title flex justify-between">
               <p>
                 <span  class="status_message bg-emerald-400 p-1 rounded mr-2">NEW</span>
-
                 <span>{{ report.user }}</span>
-
-
               </p>
               <p  class="text-gray-500">27.02 1:16 </p>
-
             </div>
             <p>{{ report.description }}</p>
             <p class="time text-gray-500 p-1 mt-1">только что...</p>
@@ -22,6 +18,8 @@
       </div>
     </div>
     <div class="messages">
+      
+      <p></p>
       <div v-for="(msg, index) in messages" :key="index" :class="[msg.sender === 'admin' ? 'me' : 'he']">
         <div class="flex mt-5 items-center">
           <div class="nick">
