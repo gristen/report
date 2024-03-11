@@ -2,24 +2,36 @@
   <div class="dialog relative p-5 rounded-xl">
     <div class="report">
       <div class="messages" style="max-height: 100%; overflow-y: auto;">
-        <div  class="content mr-3 mt-3 rounded-xl p-3 ml-1">
+        <div class="content mr-3 mt-3 rounded-xl p-3 ml-1">
           <div v-if="report" class="">
             <div class="title flex justify-between">
-              <p> <span class="status_message bg-emerald-400 p-1 rounded mr-2">NEW</span>{{report.user}}</p>
-              <p class="text-gray-500">time</p>
-            </div>
+              <p>
+                <span  class="status_message bg-emerald-400 p-1 rounded mr-2">NEW</span>
 
-            <p>{{report.description}}</p>
+                <span>{{ report.user }}</span>
+
+
+              </p>
+              <p  class="text-gray-500">27.02 1:16 </p>
+
+            </div>
+            <p>{{ report.description }}</p>
             <p class="time text-gray-500 p-1 mt-1">только что...</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="messages ">
+    <div class="messages">
       <div v-for="(msg, index) in messages" :key="index" :class="[msg.sender === 'admin' ? 'me' : 'he']">
         <div class="flex mt-5 items-center">
-          <span v-if="msg.sender === 'admin'" class="p-1 rounded mr-2 status_message_admin">{{ msg.sender }}</span>
-          <p v-if="msg.sender === 'admin'" class="mr-2">{{ msg.sender }}</p>
+          <div class="nick">
+            <p v-if="msg.sender === 'admin'" class="mr-2">
+              <span v-if="msg.sender === 'admin'" class="p-1 rounded mr-2 status_message_admin">{{ msg.sender }}</span>
+              {{ msg.sender }}
+            </p>
+          </div>
+          <p v-if="msg.sender === 'admin'" class="ml-auto text-gray-500">{{ msg.timestamp }}</p>
+          <p v-else class="mr-auto text-gray-500">{{ msg.timestamp }}</p>
           <p v-if="msg.sender !== 'admin'" class="mr-2">{{ msg.sender }}</p>
           <span v-if="msg.sender !== 'admin'" class="p-1 rounded mr-2 status_message_user">{{ msg.sender }}</span>
         </div>
@@ -28,27 +40,26 @@
         </div>
       </div>
     </div>
-    <div class="buttons_section absolute bottom-0 ">
-      <input placeholder="Введите сообщение..." class="bg-gray-600 p-4 mt-10 text-gray-50" type="text">
+    <div class="buttons_section absolute bottom-0 w-full">
+      <input placeholder="Введите сообщение..." class="bg-gray-600 p-4 mt-10 text-gray-50 w-full" type="text">
       <div class="buttons gap-2 mt-4 grid grid-cols-3 justify-around">
         <button class="p-3 rounded-xl active bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
         <button v-for="i in 5" :key="i" class="p-2 rounded-xl bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
       </div>
     </div>
-
   </div>
 </template>
 
 <script setup>
 import { defineProps } from 'vue';
 
-// Получение пропса с сообщениями
+
 const { messages,report } = defineProps({
-  messages: Array, // Определение пропса
-  report: Object // Определение пропса
+  messages: Array,
+  report: Object ,
 });
 
-console.log(report)
+console.log("report"+report)
 
 
 
@@ -108,11 +119,14 @@ input {
 }
 
 .status_message_admin {
-  background-color: red; /* Фон статуса для сообщений от админа */
+  background-color: red;
+  padding: 5px;
 }
 
 .status_message_user {
-  background-color: gray; /* Фон статуса для сообщений от пользователя */
+  background-color: #242328;
+  color: white;
+  padding: 5px;
 
 }
 </style>

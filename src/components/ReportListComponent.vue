@@ -13,6 +13,7 @@ const loadDialog = async (userId, dataReport) => {
   try {
     const { data } = await axios.get(`https://77c5a6fe3757e543.mokky.dev/messages?userId=${userId}`);
     messages.value = data[0];
+    console.log(messages.value.dialog)
     report.value = dataReport;
     selectedReportId.value = dataReport.id;
   } catch (error) {
@@ -26,7 +27,7 @@ const loadDialog = async (userId, dataReport) => {
 
 <template>
   <div class="messages cursor-pointer " style="max-height: 100%; overflow-y: auto;">
-    <div v-for="(report, index) in items" :key="index" class="content mr-3 mt-3 rounded-xl p-3 ml-1" @click="loadDialog(report.id,report)" :class="{ 'active': selectedReportId === report.id }">
+    <div v-for="report in items" :key="report.id" class="content mr-3 mt-3 rounded-xl p-3 ml-1" @click="loadDialog(report.id,report)" :class="{ 'active': selectedReportId === report.id }">
       <div class="flex justify-between">
         <p> <span class="status_message bg-emerald-400 p-1 rounded mr-2">NEW</span>{{ report.user }}</p>
         <p class="text-gray-500">{{ report.timestamp }}</p>
