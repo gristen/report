@@ -1,5 +1,5 @@
 <template>
-  <div class="main p-14 flex">
+  <div class="main  p-14 flex">
     <HeaderComponent/>
     <RouterView />
   </div>
@@ -35,5 +35,6 @@ export default {
 .main {
   scrollbar-width: thin;
   scrollbar-color: #d0c7c7 #222;
+  height: 100vh;
 }
 </style>

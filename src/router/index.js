@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/main',
       name: 'main',
-      component: () => import('../components/MessageListComponent.vue')
+      component: () => import('../components/ReportListComponent.vue')
     }
   ]
 })

@@ -1,9 +1,23 @@
 <template>
-  <div class="dialog p-5 rounded-xl">
-    <div class="messages" style="display: flex; flex-direction: column; overflow-y: auto; height: 500px;">
+  <div class="dialog relative p-5 rounded-xl">
+    <div class="report">
+      <div class="messages" style="max-height: 100%; overflow-y: auto;">
+        <div  class="content mr-3 mt-3 rounded-xl p-3 ml-1">
+          <div v-if="report" class="">
+            <div class="title flex justify-between">
+              <p> <span class="status_message bg-emerald-400 p-1 rounded mr-2">NEW</span>{{report.user}}</p>
+              <p class="text-gray-500">time</p>
+            </div>
+
+            <p>{{report.description}}</p>
+            <p class="time text-gray-500 p-1 mt-1">только что...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="messages ">
       <div v-for="(msg, index) in messages" :key="index" :class="[msg.sender === 'admin' ? 'me' : 'he']">
-        <div class="flex  mt-5">
-          <!-- Проверяем роль отправителя и выводим спан и имя в соответствии с ролью -->
+        <div class="flex mt-5 items-center">
           <span v-if="msg.sender === 'admin'" class="p-1 rounded mr-2 status_message_admin">{{ msg.sender }}</span>
           <p v-if="msg.sender === 'admin'" class="mr-2">{{ msg.sender }}</p>
           <p v-if="msg.sender !== 'admin'" class="mr-2">{{ msg.sender }}</p>
@@ -14,11 +28,14 @@
         </div>
       </div>
     </div>
-    <input placeholder="Введите сообщение..." class="bg-gray-600 p-4 mt-10 text-gray-50" type="text">
-    <div class="buttons gap-2 mt-4 grid grid-cols-3 justify-around">
-      <button class="p-3 rounded-xl active bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
-      <button v-for="i in 5" :key="i" class="p-2 rounded-xl bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
+    <div class="buttons_section absolute bottom-0 ">
+      <input placeholder="Введите сообщение..." class="bg-gray-600 p-4 mt-10 text-gray-50" type="text">
+      <div class="buttons gap-2 mt-4 grid grid-cols-3 justify-around">
+        <button class="p-3 rounded-xl active bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
+        <button v-for="i in 5" :key="i" class="p-2 rounded-xl bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -26,9 +43,13 @@
 import { defineProps } from 'vue';
 
 // Получение пропса с сообщениями
-const { messages } = defineProps({
-  messages: Array // Определение пропса
+const { messages,report } = defineProps({
+  messages: Array, // Определение пропса
+  report: Object // Определение пропса
 });
+
+console.log(report)
+
 
 
 </script>
@@ -41,7 +62,9 @@ const { messages } = defineProps({
 .he div{
   justify-content: end;
 }
-
+.buttons_section{
+  width: 95%;
+}
 .active {
   background-color: #F7C901;
   color: black;
@@ -71,11 +94,14 @@ input {
 .messages {
   scrollbar-width: thin;
   scrollbar-color: #d0c7c7 #222;
+  display: flex; flex-direction: column; overflow-y: auto; height: 55%;
+
 }
 
 .he {
   margin-left: auto;
 }
+
 
 .time {
   background: linear-gradient(to right, #333239, rgba(0, 0, 0, 0) 70%);
