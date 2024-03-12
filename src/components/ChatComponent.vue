@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="messages">
-      
+
       <p></p>
       <div v-for="(msg, index) in messages" :key="index" :class="[msg.sender === 'admin' ? 'me' : 'he']">
         <div class="flex mt-5 items-center">
