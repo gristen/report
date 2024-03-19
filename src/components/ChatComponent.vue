@@ -9,9 +9,9 @@
                 <span  class="status_message bg-emerald-400 p-1 rounded mr-2">NEW</span>
                 <span>{{ report.user }}</span>
               </p>
-              <p  class="text-gray-500">27.02 1:16 </p>
+              <p  class=" text-gray-500">27.02 1:16 </p>
             </div>
-            <p>{{ report.description }}</p>
+            <p class="text">{{ report.description }}</p>
             <p class="time text-gray-500 p-1 mt-1">только что...</p>
           </div>
         </div>
@@ -28,8 +28,8 @@
               {{ msg.sender }}
             </p>
           </div>
-          <p v-if="msg.sender === 'admin'" class="ml-auto text-gray-500">{{ msg.timestamp }}</p>
-          <p v-else class="mr-auto text-gray-500">{{ msg.timestamp }}</p>
+          <p v-if="msg.sender === 'admin'" class="ml-auto text-gray-500">12\12</p>
+          <p v-else class="mr-auto text-gray-500">12\12</p>
           <p v-if="msg.sender !== 'admin'" class="mr-2">{{ msg.sender }}</p>
           <span v-if="msg.sender !== 'admin'" class="p-1 rounded mr-2 status_message_user">{{ msg.sender }}</span>
         </div>
@@ -41,8 +41,8 @@
     <div class="buttons_section absolute bottom-0 w-full">
       <input placeholder="Введите сообщение..." class="bg-gray-600 p-4 mt-10 text-gray-50 w-full" type="text">
       <div class="buttons gap-2 mt-4 grid grid-cols-3 justify-around">
-        <button class="p-3 rounded-xl active bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
-        <button v-for="i in 5" :key="i" class="p-2 rounded-xl bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
+        <button class=" rounded-xl active bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
+        <button v-for="i in 5" :key="i" class=" rounded-xl bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
       </div>
     </div>
   </div>
@@ -64,6 +64,16 @@ console.log("report"+report)
 </script>
 
 <style scoped>
+.buttons button{
+  width: 157px;
+  height: 28px;
+  font-size: 12px;
+}
+
+.time{
+  font-size: 12px;
+}
+
 .content {
   background-color: #222128;
 }
@@ -84,7 +94,7 @@ console.log("report"+report)
 }
 
 .buttons {
-  padding: 0 20px 20px 20px;
+  padding: 0 0px 20px 0px;
 }
 
 input {
@@ -94,6 +104,7 @@ input {
 
 .text {
   background-color: #222128;
+  font-size: 14px;
 }
 
 .me, .he {
