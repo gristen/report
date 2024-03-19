@@ -69,11 +69,20 @@ console.log("report"+report)
   height: 28px;
   font-size: 12px;
 }
+.nick{
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-size: 14px;
 
+}
 .time{
   font-size: 12px;
 }
+.title{
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-size: 12px;
+  margin-bottom: 2px;
 
+}
 .content {
   background-color: #222128;
 }
@@ -105,6 +114,7 @@ input {
 .text {
   background-color: #222128;
   font-size: 14px;
+
 }
 
 .me, .he {

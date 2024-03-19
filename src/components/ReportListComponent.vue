@@ -20,15 +20,12 @@ const loadDialog = async (userId, dataReport) => {
     console.error(error);
   }
 };
-
-
-
 </script>
 
 <template>
   <div class="messages w-1/2 cursor-pointer " style="max-height: 100%; overflow-y: auto;">
     <div v-for="report in items" :key="report.id" class="content mr-3 mt-3 rounded-xl p-3 ml-1" @click="loadDialog(report.id,report)" :class="{ 'active': selectedReportId === report.id }">
-      <div class="flex justify-between">
+      <div class="flex justify-between title">
         <p> <span class="status_message bg-emerald-400 p-1 rounded mr-2">NEW</span>{{ report.user }}</p>
         <p class="text-gray-500">{{ report.timestamp }}</p>
       </div>
@@ -44,6 +41,10 @@ const loadDialog = async (userId, dataReport) => {
   background-color: #222128;
 
 }
+.title{
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-size: 12px;
+}
 .status_message{
   font-size: 12px;
 }
@@ -53,6 +54,8 @@ const loadDialog = async (userId, dataReport) => {
 }
 .report_description{
   font-size: 14px;
+  line-height: 16.8px;
+  font-family: 'Gilroy-Regular', sans-serif;
 }
 .time {
   background: linear-gradient(to right, #333239, rgba(0, 0, 0, 0) 70%);

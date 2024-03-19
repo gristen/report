@@ -5,9 +5,7 @@
     margin: 0;
     padding: 0;
 }
-body{
 
-}
 p{
     color: white;
 }
@@ -19,6 +17,7 @@ p{
  {
      scrollbar-width:thin;
      scrollbar-color: #333 #222;
+     font-family: 'Gilroy-Regular', sans-serif;
  }
  .main{
      background-color: #1e1e26;
@@ -30,5 +29,5 @@ p{
  #app{
      background: url(fon2.png) no-repeat center center fixed;
      background-size: cover;
-     
+
  }

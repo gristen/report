@@ -58,6 +58,7 @@ export default {
 .link{
   background-color: #222128;
   width: 130px;
+  font-family: 'Gilroy-Medium', sans-serif;
 }
 .link:hover{
   background-color: #F7C901;
