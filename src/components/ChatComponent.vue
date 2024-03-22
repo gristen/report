@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="buttons_section absolute bottom-0 w-full">
+    <div class="buttons_section  bottom-0 w-full">
       <input placeholder="Введите сообщение..." class="bg-gray-600 p-4 mt-10 text-gray-50 w-full" type="text">
       <div class="buttons gap-2 mt-4 grid grid-cols-3 justify-around">
         <button class=" rounded-xl active bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
@@ -64,6 +64,12 @@ console.log("report"+report)
 </script>
 
 <style scoped>
+ .dialog {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Set a specific height if needed */
+  }
+  
 .buttons button{
   width: 157px;
   height: 28px;
@@ -125,7 +131,7 @@ input {
   scrollbar-width: thin;
   scrollbar-color: #d0c7c7 #222;
   display: flex; flex-direction: column; overflow-y: auto; height: 55%;
-
+  height: 100%; /* Ensure the messages take up the full height of the report */
 }
 
 .he {
