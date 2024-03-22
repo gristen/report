@@ -23,34 +23,25 @@ export default {
 }
 </script>
 <template>
-  <nav class="w-fit flex items-center">
-  <ul class="sidenav app-sidenav " :class="{open: isOpen}"   >
-    <li class="w-fit"
-        v-for="link in links"
-        :key="link.url"
-        @click="$router.push(link.url)"
 
-    >
-      <div class="sidebar flex items-center" :style="{'position': 'relative'}">
-        <img class="absolute z-10  " src="../../assets/icons/Vector.png" alt="icons">
-        <a
-          class="  cursor-pointer link flex-grow relative text-slate-300 link group block max-w-xs rounded-lg p-6 mb-2 ring-1 ring-slate-900/5 shadow-lg space-y-3"
-          :href="link.href"
-          target="_blank"
-          rel="noopener noreferrer"
-          :class="{
-         'active': $route.path === link.url,
-         'link': true
-        }"
+  <nav class="w-fit flex flex-col items-center">
+    <img class="logo mb-5" src="../../assets/logo%20(1).png" alt="">
+    <ul class="sidenav app-sidenav" :class="{open: isOpen}">
+      <li v-for="link in links" :key="link.url" @click="$router.push(link.url)">
+        <div class="sidebar flex items-center" :style="{'position': 'relative'}">
+          <img class="absolute z-10" src="../../assets/icons/Vector.png" alt="icons">
+          <a class="cursor-pointer link flex-grow relative text-slate-300 link group block max-w-xs rounded-lg p-6 mb-2 ring-1 ring-slate-900/5 shadow-lg space-y-3"
+             :href="link.href"
+             target="_blank"
+             rel="noopener noreferrer"
+             :class="{ 'active': $route.path === link.url, 'link': true }">
+            {{ link.title }}
+          </a>
+        </div>
+      </li>
+    </ul>
+  </nav>
 
-        >
-          {{ link.title }}
-        </a>
-      </div>
-
-    </li>
-
-  </ul></nav>
 
 </template>
 
