@@ -18,8 +18,6 @@
       </div>
     </div>
     <div class="messages">
-
-      <p></p>
       <div v-for="(msg, index) in messages" :key="index" :class="[msg.sender === 'admin' ? 'me' : 'he']">
         <div class="flex mt-5 items-center">
           <div class="nick">
@@ -38,13 +36,13 @@
         </div>
       </div>
     </div>
-    <div class="buttons_section  bottom-0 w-full">
-      <input placeholder="Введите сообщение..." class="bg-gray-600 p-4 mt-10 text-gray-50 w-full" type="text">
-      <div class="buttons gap-2 mt-4 grid grid-cols-3 justify-around">
-        <button class=" rounded-xl active bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
-        <button v-for="i in 5" :key="i" class=" rounded-xl bg-gray-600 text-gray-50">Быстрый вариант ответа</button>
-      </div>
+    <div class="buttons_section">
+    <input placeholder="Введите сообщение..." class="bg-gray-600 p-4 text-gray-50 mt-4 w-full" type="text">
+    <div class="buttons grid grid-cols-3 gap-3 ">
+      <button class="rounded-xl active bg-gray-600 text-gray-50 ">Быстрый вариант ответа</button>
+      <button v-for="i in 5" :key="i" class="rounded-xl bg-gray-600 text-gray-50 ">Быстрый вариант ответа</button>
     </div>
+  </div>
   </div>
 </template>
 
@@ -56,25 +54,27 @@ const { messages,report } = defineProps({
   messages: Array,
   report: Object ,
 });
-
-console.log("report"+report)
-
-
-
 </script>
 
 <style scoped>
+
  .dialog {
     display: flex;
     flex-direction: column;
-    height: 100%; /* Set a specific height if needed */
+    height: 100%; 
   }
   
-.buttons button{
-  width: 157px;
-  height: 28px;
-  font-size: 12px;
-}
+  .buttons button {
+    width: 100%;
+    height: 2.5926vh;
+    font-size: 12px; 
+  }
+
+  @media (max-width: 1900px) {
+    .buttons button {
+      font-size: 11px; 
+    }
+  }
 .nick{
   font-family: 'Gilroy-Bold', sans-serif;
   font-size: 14px;
@@ -97,7 +97,7 @@ console.log("report"+report)
   justify-content: end;
 }
 .buttons_section{
-  width: 95%;
+  width: 100%;
 }
 .active {
   background-color: #F7C901;
@@ -109,8 +109,11 @@ console.log("report"+report)
 }
 
 .buttons {
-  padding: 0 0px 20px 0px;
-}
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    padding: 20px 0;
+  }
 
 input {
   width: 100%;
@@ -131,7 +134,7 @@ input {
   scrollbar-width: thin;
   scrollbar-color: #d0c7c7 #222;
   display: flex; flex-direction: column; overflow-y: auto; height: 55%;
-  height: 100%; /* Ensure the messages take up the full height of the report */
+  height: 100%; 
 }
 
 .he {
