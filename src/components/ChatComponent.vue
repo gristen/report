@@ -2,7 +2,7 @@
   <div class="dialog relative p-5 rounded-xl">
     <div class="report">
       <div class="messages" style="max-height: 100%; overflow-y: auto;">
-        <div class="content mr-3 mt-3 rounded-xl p-3 ml-1">
+        <div class="content mr-3 rounded-xl p-3 ml-1">
           <div v-if="report" class="">
             <div class="title flex justify-between">
               <p>
@@ -39,8 +39,8 @@
     <div class="buttons_section">
     <input placeholder="Введите сообщение..." class="bg-gray-600 p-4 text-gray-50 mt-4 w-full" type="text">
     <div class="buttons grid grid-cols-3 gap-3 ">
-      <button class="rounded-xl active bg-gray-600 text-gray-50 ">Быстрый вариант ответа</button>
-      <button v-for="i in 5" :key="i" class="rounded-xl bg-gray-600 text-gray-50 ">Быстрый вариант ответа</button>
+      <button class="active">Быстрый вариант ответа</button>
+      <button v-for="i in 5" :key="i" class="">Быстрый вариант ответа</button>
     </div>
   </div>
   </div>
@@ -62,22 +62,35 @@ const { messages,report } = defineProps({
     display: flex;
     flex-direction: column;
     height: 100%; 
+    margin-left: 1.6667vh;
   }
   
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    align-content: center;
+  }
+
   .buttons button {
-    width: 100%;
+    width: 8.1771vw;
     height: 2.5926vh;
-    font-size: 12px; 
+    font-size: 0.625vw; 
+    border-radius: 0.463vh;
+    background-color: rgba(255, 255, 255, 5%);
+    color: white;
   }
 
   @media (max-width: 1900px) {
     .buttons button {
-      font-size: 11px; 
+      font-size: 1.0185vh; 
     }
   }
 .nick{
   font-family: 'Gilroy-Bold', sans-serif;
-  font-size: 14px;
+  font-size: 0.625vw\;
 
 }
 .time{
@@ -112,7 +125,7 @@ const { messages,report } = defineProps({
     /* display: flex;
     flex-wrap: wrap; */
     /* justify-content: space-between; */
-    padding: 20px 0;
+    padding: 0.5729vw 0 0.9896vw 0;
   }
 
 input {
@@ -131,11 +144,12 @@ input {
 }
 
 .messages {
-  scrollbar-width: thin;
-  scrollbar-color: #d0c7c7 #222;
+ /* scrollbar-width: thin;
+  scrollbar-color: #d0c7c7 #222;*/
   display: flex; flex-direction: column; overflow-y: auto; height: 55%;
   height: 100%; 
 }
+
 
 .he {
   margin-left: auto;

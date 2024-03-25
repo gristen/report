@@ -14,10 +14,10 @@ p{
     width: 41.6667vw;
     height: 100%;
     padding: 20px 20px 10px 20px;
-}html
+}
+
+html
  {
-     scrollbar-width:thin;
-     scrollbar-color: #333 #222;
      font-family: 'Gilroy-Regular', sans-serif;
  }
  .main{
@@ -32,3 +32,11 @@ p{
      background-size: cover;
 
  }
+
+::webkit-scrollbar-button { 
+    display: none;
+}
+
+::webkit-scrollbar-width {
+    width: 3px;
+}

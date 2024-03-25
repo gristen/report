@@ -33,8 +33,6 @@ export default {
 
 <style scoped>
 .main {
-  scrollbar-width: thin;
-  scrollbar-color: #d0c7c7 #222;
   height: 68.8148vh;
   width: 54.1146vw;
 }

@@ -24,7 +24,7 @@ const loadDialog = async (userId, dataReport) => {
 
 <template>
   <div class="messages w-1/2 cursor-pointer " style="max-height: 100%; overflow-y: auto;">
-    <div v-for="report in items" :key="report.id" class="content mr-3 mt-3 rounded-xl p-3 ml-1" @click="loadDialog(report.id,report)" :class="{ 'active': selectedReportId === report.id }">
+    <div v-for="report in items" :key="report.id" class="content mr-3 rounded-xl p-3 ml-1" @click="loadDialog(report.id,report)" :class="{ 'active': selectedReportId === report.id }">
       <div class="flex justify-between title">
         <p> <span class="status_message bg-emerald-400 p-1 rounded mr-2">NEW</span>{{ report.user }}</p>
         <p class="text-gray-500">{{ report.timestamp }}</p>
@@ -39,6 +39,7 @@ const loadDialog = async (userId, dataReport) => {
 <style scoped>
 .content {
   background-color: #222128;
+  margin-bottom: 0.7407vh;
 
 }
 .title{
@@ -63,7 +64,25 @@ const loadDialog = async (userId, dataReport) => {
 }
 
 .messages {
-  scrollbar-width: thin;
-  scrollbar-color: #d0c7c7 #222;
+  margin-left: 1.3889vh;
 }
+
+.messages::-webkit-scrollbar-track
+{
+  border-radius: 0.7813vw;
+	background-color: rgba(217, 217, 217, 10%);
+}
+
+.messages::-webkit-scrollbar
+{
+	width: 1px;
+
+}
+
+.messages::-webkit-scrollbar-thumb
+{
+  border-radius: 0.7813vw;
+  background-color: #F5F5F5;
+}
+
 </style>
