@@ -12,7 +12,7 @@
 </p>
     </div>
   </div>
-  <ChatComponent :messages="messages" :report="report" />
+  <ChatComponent :messages="messages" :report="report " :calculateTimeAgo="calculateTimeAgo" />
 </template>
 
 <script setup>

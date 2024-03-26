@@ -12,7 +12,11 @@
               <p  class=" text-gray-500">27.02 1:16 </p>
             </div>
             <p class="text">{{  report.description }}</p>
-            <p class="time text-gray-500 p-1 mt-1">только что...</p>
+            <p class="time p-1 mt-1" >
+     <span class="res">   Ждет ответа уже </span>
+        <span :class="calculateTimeAgo(report.timestamp).colorClass">{{ calculateTimeAgo(report.timestamp).text }}</span>
+</p>
+
           </div>
         </div>
       </div>
@@ -26,8 +30,8 @@
               {{ msg.sender }}
             </p>
           </div>
-          <p v-if="msg.sender === 'admin'" class="ml-auto text-gray-500">12\12</p>
-          <p v-else class="mr-auto text-gray-500">12\12</p>
+          <p v-if="msg.sender === 'admin'" class="ml-auto textt text-gray-500">{{report.timestamp}}</p>
+          <p v-else class="mr-auto textt text-gray-500">{{report.timestamp}}</p>
           <p v-if="msg.sender !== 'admin'" class="mr-2">{{ msg.sender }}</p>
           <span v-if="msg.sender !== 'admin'" class="p-1 rounded mr-2 status_message_user">{{ msg.sender }}</span>
         </div>
@@ -54,6 +58,7 @@ import { defineProps } from 'vue';
 const { messages,report } = defineProps({
   messages: Array,
   report: Object ,
+  calculateTimeAgo:Function
 });
 
 
@@ -67,7 +72,15 @@ const { messages,report } = defineProps({
   border-radius: 0.7813vw;
 	background-color: rgba(217, 217, 217, 10%);
 }
-
+.orange-text {
+ color:rgba(255, 133, 85, 1);
+}
+.res{
+  color: rgba(255, 255, 255, 0.33);
+}
+.red-text {
+  color: rgba(255, 90, 90, 1);
+}
 .messages::-webkit-scrollbar
 {
 	width: 1px;
@@ -93,7 +106,10 @@ const { messages,report } = defineProps({
     width: 45.9259vh;
     padding: 1.8519vh 1.8519vh 0.9259vh 1.8519vh;
   }
-  
+  .textt{
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 1.1111vh;
+  }
   .buttons {
     display: flex;
     flex-wrap: wrap;
