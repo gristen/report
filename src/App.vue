@@ -33,7 +33,7 @@ export default {
 
 <style scoped>
 .main {
-  height: 68.8148vh;
-  width: 54.1146vw;
+  width: 98.1481vh;
+  height: 64.0741vh;
 }
 </style>
