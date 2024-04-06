@@ -180,7 +180,7 @@ input {
   background-image: url("/src/assets/icons/enter.png");
   background-repeat: no-repeat;
   background-position: right 1.6667vh center;
-  padding-right: 20px;
+  padding-right: 1.8519vh;
 }
 
 .text {
