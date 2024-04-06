@@ -18,12 +18,13 @@
 <script setup>
 import { inject, ref } from 'vue'
 import axios from 'axios'
-import ChatComponent from '@/components/ChatComponent.vue'
+import ChatComponent from '@/components/reports/ChatComponent.vue'
 
 const messages = ref([])
 const report = ref(null);
 const items = inject('items')
 const selectedReportId = ref(null);
+
 
 const loadDialog = async (userId, dataReport) => {
   try {
@@ -52,6 +53,9 @@ const calculateTimeAgo = (timestamp) => {
 
   return { text: `${minutesAgo} минут`, colorClass };
 };
+
+
+
 </script>
 
 <style scoped>

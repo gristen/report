@@ -7,8 +7,18 @@ const router = createRouter({
     {
       path: '/main',
       name: 'main',
-      component: () => import('../components/ReportListComponent.vue')
-    }
+      component: () => import('../components/reports/ReportListComponent.vue')
+    },
+    {
+      path: '/logs',
+      name: 'logs',
+      component: () => import('../components/logs/index.vue')
+    },
+    {
+      path: '/teleports',
+      name: 'teleports',
+      component: () => import('../components/teleports/TeleportsComponent.vue')
+    },
   ]
 })
 

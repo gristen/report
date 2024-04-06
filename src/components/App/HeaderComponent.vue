@@ -14,10 +14,10 @@ export default {
     links:[
       {title:'Обращения игроков',url:'/main',exact:true,icon:'/src/assets/icons/reports.png'},
       {title:'Управление над игроком',url:'/',icon:'/src/assets/icons/user.png'},
-      {title:'Логи сервера',url:'/',icon:'/src/assets/icons/logs.png'},
+      {title:'Логи сервера',url:'/logs',icon:'/src/assets/icons/logs.png'},
       {title:'Управление транспортом',url:'/',icon:'/src/assets/icons/transport.png'},
       {title:'Управление территориями',icon:'/src/assets/icons/territories.png'},
-      {title:'Управление телепортом',icon:'/src/assets/icons/Vector (12).png'},
+      {title:'Управление телепортом',url:"/teleports",icon:'/src/assets/icons/Vector (12).png'},
     ]
   }),
   methods: {
