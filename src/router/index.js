@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/logs',
       name: 'logs',
-      component: () => import('../components/logs/log.vue')
+      component: () => import('../components/logs/logComponent.vue')
     },
     {
       path: '/teleports',

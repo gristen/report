@@ -15,7 +15,7 @@
     <input placeholder="Введите сообщение..." class="bg-gray-600 text-gray-50 mt-4 w-full enter" type="text">
    
     <div class="buttons grid grid-cols-3 gap-3 ">
-      <button class="active">Быстрый вариант ответа</button>
+      <button class="active">Быстрый вариант  ответа</button>
       <button v-for="i in 10" :key="i" class="">Быстрый вариант ответа</button>
     </div>
   </div>
