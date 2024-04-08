@@ -33,7 +33,7 @@ export default {
 
     onMounted(async () => {
       try {
-        const { data } = await axios.get('https://d40a9d1a695e9f51.mokky.dev/logs')
+        const { data } = await axios.get('https://77c5a6fe3757e543.mokky.dev/logs')
         logs.value = data
       } catch (error) {
         console.error(error)
@@ -77,8 +77,9 @@ export default {
   font-family: 'Gilroy-Bold', sans-serif;
 }
 .enter{
-  background-image: url("/src/assets/icons/enter.png");
+  background-image: url("/src/assets/icons/enter.svg");
   background-size: 1.2185vh; 
+  border-radius: 0.7407vh;
 }
 .text,.time{
   color: 
@@ -159,6 +160,8 @@ rgba(255, 255, 255, 0.35);
   background-repeat: no-repeat;
   background-position: 0.9259vh center; 
   padding-left: 2.7778vh;
+  border: 1px rgba(255, 255, 255, 0.06) solid;
+  border-radius: 0.0926vh;
 }
 
 .log {

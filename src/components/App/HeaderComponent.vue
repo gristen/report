@@ -1,6 +1,8 @@
 
 <script>
 
+
+
 export default {
   props: {
     isOpen: {
@@ -17,7 +19,7 @@ export default {
       {title:'Логи сервера',url:'/logs',icon:'/src/assets/icons/logs.png'},
       {title:'Управление транспортом',url:'/',icon:'/src/assets/icons/transport.png'},
       {title:'Управление территориями',icon:'/src/assets/icons/territories.png'},
-      {title:'Управление телепортом',url:"/teleports",icon:'/src/assets/icons/Vector (12).png'},
+      {title:'Управление телепортом',url:"/teleports",icon:'/src/assets/icons/teleports.png'},
     ]
   }),
   methods: {
@@ -25,6 +27,7 @@ export default {
       this.activeIndex = index; 
     }
   }
+  
 }
 </script>
 <template>
@@ -49,6 +52,8 @@ export default {
 
 
 <style scoped>
+
+
 .link {
   font-family: 'Gilroy-Medium', sans-serif;
   display: flex;
@@ -59,8 +64,11 @@ export default {
   color: white;
 
 }
+
+
 .test1{
   opacity: 1 !important;
+  
 }
 .icons{
   opacity: 0.2;
@@ -91,6 +99,8 @@ export default {
 .active {
   background-color: #F7C901;
   color: black;
+
 }
+
 
 </style>

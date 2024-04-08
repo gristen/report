@@ -177,7 +177,7 @@ const { messages,report } = defineProps({
 input {
   width: 100%;
   background-color: #0F0E13;
-  background-image: url("/src/assets/icons/enter.png");
+  background-image: url("/src/assets/icons/enter.svg");
   background-repeat: no-repeat;
   background-position: right 1.6667vh center;
   padding-right: 1.8519vh;

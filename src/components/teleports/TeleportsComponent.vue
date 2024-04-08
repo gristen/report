@@ -40,6 +40,7 @@
   .header{
     display: flex;
   }
+  
   .teleports::-webkit-scrollbar-thumb
   {
     border-radius: 0.7813vw;
@@ -56,11 +57,12 @@
     color: rgba(255, 255, 255, 0.12);
     padding: 1.1111vh, 1.0185vh, 1.1111vh, 1.0185vh;
     font-size: 1.1111vh;
-    background-image: url("/src/assets/icons/enter.png");
+    background-image: url("/src/assets/icons/enter.svg");
     background-repeat: no-repeat;
     background-position: right 1.6667vh center;
     background-size: 1.0963vh;
     padding-left: 1.5741vh;
+    border-radius: 0.7407vh;
   }
 
   .teleport_img{
@@ -111,6 +113,7 @@
   }
   .enter{
     background-image: url("/src/assets/icons/enter.png");
+   
   }
  
  
@@ -122,6 +125,7 @@
       background-color: rgba(0, 0, 0, 0.15);
       width: 100%;
       padding: 1.8519vh 1.8519vh 0.9259vh 1.8519vh;
+      border-radius: 1.3889vh;
   }
 
     
@@ -153,6 +157,7 @@
     background-position: right 1.6667vh center;
     background-size: 1.0963vh;
     padding-left: 1.5741vh;
+    border-radius: 0.7407vh;
   }
   
   </style>
