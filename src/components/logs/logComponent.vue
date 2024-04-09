@@ -142,9 +142,7 @@ rgba(255, 255, 255, 0.35);
 .buttons button:hover {
   background-color: #403f41;
 }
-.buttons {
-    padding: 0.5729vw 0 0.9896vw 0;
-}
+
 
 .search{
   width: 25vh;

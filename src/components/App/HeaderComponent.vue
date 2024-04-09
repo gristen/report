@@ -17,7 +17,7 @@ export default {
       {title:'Обращения игроков',url:'/main',exact:true,icon:'/src/assets/icons/reports.png'},
       {title:'Управление над игроком',url:'/',icon:'/src/assets/icons/user.png'},
       {title:'Логи сервера',url:'/logs',icon:'/src/assets/icons/logs.png'},
-      {title:'Управление транспортом',url:'/',icon:'/src/assets/icons/transport.png'},
+      {title:'Управление транспортом',url:'/transports',icon:'/src/assets/icons/transport.png'},
       {title:'Управление территориями',icon:'/src/assets/icons/territories.png'},
       {title:'Управление телепортом',url:"/teleports",icon:'/src/assets/icons/teleports.png'},
     ]
@@ -40,7 +40,7 @@ export default {
              rel="noopener noreferrer"
              :class="{ 'active': $route.path === link.url, 'link': true }" class=" sidebar flex items-center" :style="{'position': 'relative'}">
              <img :class="{ 'test1': $route.path === link.url }" class="icons" :src="link.icon" alt="icons">
-           <a class="">
+           <a class="link_title">
             {{ link.title }}
           </a>
         </div>
@@ -62,9 +62,9 @@ export default {
   width: 12.2222vh;
   height: 4.9296vh;
   color: white;
+  cursor: pointer;
 
 }
-
 
 .test1{
   opacity: 1 !important;

@@ -19,6 +19,11 @@ const router = createRouter({
       name: 'teleports',
       component: () => import('../components/teleports/TeleportsComponent.vue')
     },
+    {
+      path: '/transports',
+      name: 'transports',
+      component: () => import('../components/transports/transportComponent.vue')
+    },
   ]
 })
 

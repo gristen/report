@@ -10,7 +10,20 @@ p{
     color: white;
 }
 
+.buttons button {
+    width: 14.537vh;
+    height: 2.5926vh;
+    font-size: 1.1111vh; 
+    border-radius: 0.463vh;
+    background-color: rgba(255, 255, 255, 5%);
+    color: white;
+  }
 
+  .buttons{
+    padding: 0.5729vw 0 0.9896vw 0;
+    gap: 0.6481vh;
+  }
+  
 html
  {
      font-family: 'Gilroy-Regular', sans-serif;
