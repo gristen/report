@@ -134,7 +134,6 @@
     background-color: #0F0E13;
     background-repeat: no-repeat;
     background-position: right 1.6667vh center;
-    /* padding-right: 20px; */
     margin-right: 0.5556vh;
   }
   

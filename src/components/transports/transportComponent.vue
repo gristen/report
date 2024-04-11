@@ -63,6 +63,10 @@
       width: 1px;
   
   }
+  .active{
+  background-color: #F7C901;
+  color: #0F0E13;
+}
   .button_title{
     font-size: 1.2963vh;
     color: white;
@@ -98,14 +102,17 @@
     align-items: center;
   }
 
+  
+
+
   .active_transport{
     display: flex;
  
   }
 
   .buttons button:hover {
-  background-color: #F7C901;
-  color: #0F0E13;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
 }
   
   .transports::-webkit-scrollbar-thumb

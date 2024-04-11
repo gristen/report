@@ -24,6 +24,16 @@ const router = createRouter({
       name: 'transports',
       component: () => import('../components/transports/transportComponent.vue')
     },
+    {
+      path: '/terripories',
+      name: 'terripories',
+      component: () => import('../components/territories/territoriesComponent.vue')
+    },
+    {
+      path: '/user',
+      name: 'user',
+      component: () => import('../components/user/userControlComponent.vue')
+    },
   ]
 })
 

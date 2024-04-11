@@ -15,10 +15,10 @@ export default {
     activeIndex: null,
     links:[
       {title:'Обращения игроков',url:'/main',exact:true,icon:'/src/assets/icons/reports.png'},
-      {title:'Управление над игроком',url:'/',icon:'/src/assets/icons/user.png'},
+      {title:'Управление над игроком',url:'/user',icon:'/src/assets/icons/user.png'},
       {title:'Логи сервера',url:'/logs',icon:'/src/assets/icons/logs.png'},
       {title:'Управление транспортом',url:'/transports',icon:'/src/assets/icons/transport.png'},
-      {title:'Управление территориями',icon:'/src/assets/icons/territories.png'},
+      {title:'Управление территориями',url:'/terripories',icon:'/src/assets/icons/territories.png'},
       {title:'Управление телепортом',url:"/teleports",icon:'/src/assets/icons/teleports.png'},
     ]
   }),
@@ -93,7 +93,7 @@ export default {
   padding-left: 1.0185vh;
   padding-right: 1.0185vh;
   border-radius: 0.463vh;
-  border: 1px solid rgba(255, 255, 255, 5%);
+  border: 0.0926vh solid rgba(255, 255, 255, 5%);
   background-color: #222128;
 }
 .active {

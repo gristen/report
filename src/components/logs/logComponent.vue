@@ -127,7 +127,6 @@ rgba(255, 255, 255, 0.35);
   background-color: #0F0E13;
   background-repeat: no-repeat;
   background-position: right 1.6667vh center;
-  /* padding-right: 20px; */
 }
 
   .buttons_section{
@@ -147,7 +146,7 @@ rgba(255, 255, 255, 0.35);
 .search{
   width: 25vh;
   background-color: 
-  rgba(255, 255, 255, 0.05);
+  rgba(255, 255, 255, 0.06);
   height: 3.8704vh;
   font-size: 1.1111vh;
   color: rgba(255, 255, 255, 1);
@@ -158,8 +157,8 @@ rgba(255, 255, 255, 0.35);
   background-repeat: no-repeat;
   background-position: 0.9259vh center; 
   padding-left: 2.7778vh;
-  border: 1px rgba(255, 255, 255, 0.06) solid;
-  border-radius: 0.0926vh;
+  border: 0.0926vh rgba(255, 255, 255, 0.06) solid;
+  border-radius: 0.463vh;
 }
 
 .log {
