@@ -19,7 +19,7 @@
                 <img class="transport_img" src="../../assets/cars images/Dodge.svg" alt="">
             </div>
         <p class="transport_title">Ammo-nation #555</p>
-        <button class="transport_button">Телепорт</button>
+        <button class="transport_button">Создать</button>
       </div>
  
       <div class="buttons_section">

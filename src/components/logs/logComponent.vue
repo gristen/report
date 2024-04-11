@@ -95,20 +95,21 @@ rgba(255, 255, 255, 0.35);
 
 }
 .wrapper{
-  display: flex;
+   display: flex;
     flex-direction: column;
     height: 100%; 
     margin-left: 1.6667vh;
     background-color: rgba(0, 0, 0, 0.15);
     width: 100%;
     padding: 1.8519vh 1.8519vh 0.9259vh 1.8519vh;
+    border-radius: 1.3889vh;
 }
 
 
 .buttons {
     display: flex;
     flex-wrap: wrap;
-   
+    margin-top: 1.0185vh;
     align-items: stretch;
     flex-direction: row;
     align-content: center;
@@ -131,6 +132,7 @@ rgba(255, 255, 255, 0.35);
 
   .buttons_section{
   width: 100%;
+
 }
 .buttons_section input{
   height: 4.2593vh;
