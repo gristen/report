@@ -229,7 +229,9 @@
   
   .active_territory{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 0.2778vh;
   
   }
   
